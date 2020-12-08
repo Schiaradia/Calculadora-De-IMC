@@ -1,0 +1,35 @@
+print("""Calculadora De Indice de Masa Corporal (IMC) """)
+
+persona={"Nombre": "","Apellido": "","Edad": "","Peso": 0,"Altura": 0,"Dirección": "","Teléfono": ""}
+
+def cat_imc(imc):
+    if imc < 18.5:
+        print("""Estas Por debajo de tu PESO IDEAL""")
+    elif imc < 24.9:
+        print("""Estas en la categoria PESO NORMAL""")
+    elif imc < 29.9:
+        print("""Estas en la categoria SOBREPESO""")
+    elif imc < 34.9:
+        print("""Estas en la categoria OBESIDAD TIPO 1""")
+    elif imc < 39.9:
+        print("""Estas en la categoria OBESIDAD TIPO 2""")
+    elif imc > 40:
+        print("""Estas en la categoria OBESIDAD TIPO 3""")
+
+def imprimir():
+    for dato in persona:
+        print (dato, ":", persona[dato])
+
+for i in persona:
+    persona[i]=input(f"Ingrese su {i} :")
+
+imc=round(float(persona["Peso"]) / (float(persona["Altura"])**2),2)
+
+persona["IMC"]=imc
+
+print(".-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.")
+
+imprimir()
+cat_imc(imc)
+
+print("-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.")
